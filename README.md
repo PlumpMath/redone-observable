@@ -23,16 +23,16 @@ subject.next('bar');
 
 ### Pushing values through an observable
 ```js
-import { Store } from 'redone';
+import { Datum } from 'redone';
 import { observe } from 'redone-observable';
 
-const store = new Store('test');
-const observable = observe(() => store.get());
+const datum = new Datum('test');
+const observable = observe(() => datum.get());
 observable.subscribe(value => {
   console.log(value);
 });
 // 'test'
 
-store.set('foo');
+datum.set('foo');
 // 'foo'
 ```

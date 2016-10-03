@@ -1,25 +1,18 @@
 /* global it expect */
 
-import { Dependency } from 'redone';
+import { Datum } from 'redone';
 import observe from './observe';
 
 it('should pump new values into the observable', () => {
-  const dep = new Dependency();
-  let value = '';
-  const obs = observe(() => {
-    dep.depend();
-    return value;
-  });
+  const datum = new Datum('');
+  const obs = observe(() => datum.get());
   let result = '';
   const sub = obs.subscribe(val => {
     result += val;
   });
-  value = 'hel';
-  dep.changed();
-  value = 'lo';
-  dep.changed();
+  datum.set('hel');
+  datum.set('lo');
   sub.dispose();
-  value = '!';
-  dep.changed();
+  datum.set('!');
   expect(result).toBe('hello');
 });
