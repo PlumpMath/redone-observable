@@ -1,5 +1,9 @@
 # Redone Observable
 
+[![NPM version][npm-image]][npm-url]
+[![Build status][travis-image]][travis-url]
+[![Test coverage][codecov-image]][codecov-url]
+
 ### Reading values from an observable
 ```js
 import { Autorun } from 'redone';
@@ -36,3 +40,10 @@ observable.subscribe(value => {
 datum.set('foo');
 // 'foo'
 ```
+
+[npm-image]: https://img.shields.io/npm/v/redone-observable.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/redone-observable
+[travis-image]: https://img.shields.io/travis/stephenbunch/redone-observable.svg?style=flat-square
+[travis-url]: https://travis-ci.org/stephenbunch/redone-observable
+[codecov-image]: https://img.shields.io/codecov/c/github/stephenbunch/redone-observable.svg?style=flat-square
+[codecov-url]: https://codecov.io/github/stephenbunch/redone-observable
